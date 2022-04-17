@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link href="css/style.css" rel="stylesheet"/>
+    <title>Dice Hi Lo Game</title>
+  </head>
+  <!-- background color has been added to the body using inline css -->
+  <body style="background-color: rgba(11, 204, 218, 0.87);">
+
+    <!--  add our header -->
+	<header id="navigation" class="menu-row">
+		<article>
+      <img src="./img/logo2.png" class="ms-4" alt="logo">
+    </article>
+    <nav>
+      <ul>
+          <li><a href="CreateGameRoomView.html">Create Game Room</a></li>
+          <li><a href="GameRules.html" target="_blank">Rules</a></li>
+          <li><a href="AboutUs.html" target="_blank">About Us</a></li>
+      </ul>
+    </nav>
+	</header>
+  
+    <main class="container px-4 py-2 mt-5 bg-dark">
+
+        <!-- Room Name -->
+        <h1 style="color:white">
+          Room Name: <span id="roomname" name="roomname">
+        </h1>
+
+        <h2 style="color:white"></h2>
+
+        
+
+        <!-- ROW 1: Player&House Chips Display AND Double Dice Display AND Round Results Info -->
+        <div class="d-flex bg-secondary p-2">
+
+            <!-- Player and House Chip Display -->
+            <div class="col-3 d-print-block bg-dark ps-4 py-2 border border-white border-2 h-50">
+
+              <!-- Player Chip Display -->
+              <div class="mt-2 text-white fw-bold">
+                <span id="playerdisplay" name="playerdisplay" class="">
+              </div>
+    
+              <!-- House Chip Display -->
+              <div class="text-white mt-2 fw-bold" id = "div1">
+                <p class="">House Chip Pool: 
+                  <span id="housepoolamount" name="poolamount"></span>
+                </p>
+              </div>
+
+            </div>
+
+          <!-- Double Dice Display -->
+          <div class="col-6 d-print-block bg-dark ps-2 py-2 border border-white border-2 container" id = "dice display">
+            <div class="row align-items-center">
+              <img class="image1 col" src="diceimages/dice6.png">
+              <img class="image2 col" src="diceimages/dice6.png">
+            </div>
+          </div>
+
+          <!-- Previous Roll Amount Display -->
+          <div class="col-2 align-self-md-baseline d-print-block bg-dark ps-2 py-2 border border-white border-2 text-white" id = "previous role">
+            <p id="winner" name="winner"></p>
+            <p id="winPlayer" name="winPlayer"></p>
+            <p id="lossPlayer" name="lossPlayer"></p>
+          </div>
+
+        </div>
+
+        <!-- ROW 2: Bet Display AND Hi Lo Buttons AND Forfeit Button with Number of Rounds Display -->
+        <div class="d-flex justify-content-between bg-secondary p-2">
+
+          <!-- Bet Display with Increase and Decrease buttons -->
+          <div class="input-group w-25">
+            <p class="input-group-text bg-dark text-white">Bet Amount: 
+              <span id="betdisplay" name="betdisplay" class="text-info">
+            </p>
+            <button id="increasebet" class="btn btn-primary mb-3" type="submit" onclick = "IncrBet()"> + </button>
+            <button id="decreasebet" class="btn btn-danger mb-3" type="submit" onclick = "DecrBet()"> - </button>
+          </div>
+
+          <div class="d-flex">
+            <!-- Hi Button -->
+            <div class="ms-2 me-3">
+              <button id="hi" class="btn btn-primary btn-lg py-3" onclick="HiRoll()"> Hi </button>
+            </div>
+
+            <!-- Lo Button -->
+            <div class="ms-3">
+              <button id="lo" class="btn btn-danger btn-lg py-3 text-white" onclick="LowRoll()"> Lo </button>
+            </div>
+          </div>
+
+          <div class="d-flex">
+
+            <!-- Forfeit -->
+            <div class="mt-2 fw-bold">
+              <button id="forfeit" class="btn btn-danger p-2" onclick="Forfeit()"> Forfeit </button>
+            </div>
+
+            <!-- Number of Rounds Display -->
+            <div class="d-print-block bg-dark px-2 pt-3 border border-white border-2 ms-4 text-white">
+              # of rounds: <span class="text-info" id="rounds" name="rounds">
+            </div>
+
+          </div>
+          
+          
+
+        </div>
+
+    </main>
+
+    <script src="MainGameView.js"></script>
+
+    <!--  adding footer -->
+    <footer id="footer" class="fixed-bottom">
+    	<!--  adding footer -->
+        <article>
+            <!--  img that indicates which group made the project -->
+              <img src="./img/logo3.png" alt="logo">
+          </article>
+          <article>
+              <p class="pt-4">COMP1073 - Client-Side Javascript<br>
+                Professor: Shivali Dhaka<br>
+                Date: 2021-12-16</p>
+          </article>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+
+  </body>
+</html>
